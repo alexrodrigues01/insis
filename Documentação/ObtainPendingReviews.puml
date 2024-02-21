@@ -1,0 +1,34 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor Moderator as USER
+box "ReviewsGet"
+participant "ReviewsController" as CTRL
+participant "ReviewService" as SERV
+participant "ProductRepo" as REPO
+participant "ReviewRepo" as REPO2
+database "ReviewsGet" as DB
+participant "MessageBroker" as MSG
+
+USER -> CTRL : GET /reviews/pending
+activate CTRL
+    CTRL-> SERV : reviews = findPendingReview()
+    activate SERV
+        SERV -> REPO: r = findPendingReviews(sku)
+                activate REPO
+                    REPO -> DB : findPendingReviews(sku)
+                    activate DB
+                    deactivate DB
+                deactivate REPO
+        SERV -> "ReviewMapper" : toDtoList(r)
+            activate "ReviewMapper"
+            deactivate "ReviewMapper"
+    deactivate SERV
+CTRL -> CTRL : event = new event(Get,reviews)
+CTRL -> MSG : sendMessage(event)
+    activate MSG
+    deactivate MSG
+CTRL --> USER : Retorna as reviews
+deactivate CTRL
+@enduml

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<datamapper:DataMapperRoot xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper">
+  <input>
+    <treeNode name="root" level="1">
+      <properties key="type" value="array"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="items_id" value="http://wso2jsonschema.org/0"/>
+      <properties key="items_type" value="array"/>
+      <properties key="nullable" value="false"/>
+      <outNode>
+        <outgoingLink inNode="//@output/@treeNode.0/@inNode"/>
+      </outNode>
+      <inNode/>
+    </treeNode>
+  </input>
+  <output>
+    <treeNode name="root" level="1">
+      <properties key="type" value="array"/>
+      <properties key="$schema" value="http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#"/>
+      <properties key="id" value="http://wso2jsonschema.org"/>
+      <properties key="items_id" value="http://wso2jsonschema.org/0"/>
+      <properties key="items_type" value="array"/>
+      <properties key="nullable" value="false"/>
+      <outNode/>
+      <inNode incomingLink="//@input/@treeNode.0/@outNode/@outgoingLink.0"/>
+    </treeNode>
+  </output>
+</datamapper:DataMapperRoot>

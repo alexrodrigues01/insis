@@ -1,0 +1,43 @@
+openapi: 3.0.1
+info:
+  title: AcmeApi
+  description: API Definition of AcmeApi
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/acme
+paths:
+  /quantityReviews:
+    get:
+      responses:
+        default:
+          description: Default response
+  /VotesByReviewsByUserId:
+    get:
+      responses:
+        default:
+          description: Default response
+  /VotesByUserId:
+    get:
+      responses:
+        default:
+          description: Default response
+  /EvaluteQuantityUpDownVotes:
+    get:
+      responses:
+        default:
+          description: Default response
+  /VotesByReviewId:
+    get:
+      responses:
+        default:
+          description: Default response
+  /reviews/votesQuantity:
+    get:
+      responses:
+        default:
+          description: Default response
+  /reviews/votesPercentage:
+    get:
+      responses:
+        default:
+          description: Default response

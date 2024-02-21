@@ -1,0 +1,14 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+var count_i_inputroot_a01dc7c4_173f_410f_91a3_0b0cb8f72a43 = 0;
+outputroot =  [];
+
+for(i_inputroot_a01dc7c4_173f_410f_91a3_0b0cb8f72a43 in inputroot){
+outputroot[count_i_inputroot_a01dc7c4_173f_410f_91a3_0b0cb8f72a43] = inputroot[i_inputroot_a01dc7c4_173f_410f_91a3_0b0cb8f72a43];
+
+count_i_inputroot_a01dc7c4_173f_410f_91a3_0b0cb8f72a43++;
+}
+return outputroot;
+};
+

@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_qhoZYAosEe60rvgXZOyIhg" type="DataMapper" name="ReviewsMoreUpvoteMapper.datamapper_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_qlIZUAosEe60rvgXZOyIhg" type="2002" fontName="Segoe UI">
+    <children xmi:type="notation:Shape" xmi:id="_VvFsoAouEe60rvgXZOyIhg" type="3002" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_VvFsogouEe60rvgXZOyIhg" type="5002"/>
+      <children xmi:type="notation:Shape" xmi:id="_VvG6wAouEe60rvgXZOyIhg" type="3003" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_VvG6wgouEe60rvgXZOyIhg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_VvJXAAouEe60rvgXZOyIhg" type="3020" fontName="Segoe UI">
+          <element xmi:type="datamapper:InNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.0/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvJXAQouEe60rvgXZOyIhg" x="-1" y="1"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_VvJXAgouEe60rvgXZOyIhg" type="3019" fontName="Segoe UI">
+          <element xmi:type="datamapper:OutNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.0/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvJXAwouEe60rvgXZOyIhg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvG6wQouEe60rvgXZOyIhg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_VvHh0AouEe60rvgXZOyIhg" type="3003" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_VvHh0gouEe60rvgXZOyIhg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_VvLzQAouEe60rvgXZOyIhg" type="3020" fontName="Segoe UI">
+          <element xmi:type="datamapper:InNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.1/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvLzQQouEe60rvgXZOyIhg" x="-1" y="1"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_VvMaUAouEe60rvgXZOyIhg" type="3019" fontName="Segoe UI">
+          <element xmi:type="datamapper:OutNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.1/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvMaUQouEe60rvgXZOyIhg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvHh0QouEe60rvgXZOyIhg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_VvHh0wouEe60rvgXZOyIhg" type="3003" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_VvHh1QouEe60rvgXZOyIhg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_VvPdoAouEe60rvgXZOyIhg" type="3020" fontName="Segoe UI">
+          <element xmi:type="datamapper:InNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.2/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvPdoQouEe60rvgXZOyIhg" x="-1" y="1"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_VvPdogouEe60rvgXZOyIhg" type="3019" fontName="Segoe UI">
+          <element xmi:type="datamapper:OutNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.2/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvPdowouEe60rvgXZOyIhg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.2"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvHh1AouEe60rvgXZOyIhg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_VvHh1gouEe60rvgXZOyIhg" type="3003" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_VvHh2AouEe60rvgXZOyIhg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_VvR54AouEe60rvgXZOyIhg" type="3020" fontName="Segoe UI">
+          <element xmi:type="datamapper:InNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.3/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvR54QouEe60rvgXZOyIhg" x="-1" y="1"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_VvR54gouEe60rvgXZOyIhg" type="3019" fontName="Segoe UI">
+          <element xmi:type="datamapper:OutNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.3/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvR54wouEe60rvgXZOyIhg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.3"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvHh1wouEe60rvgXZOyIhg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_VvHh2QouEe60rvgXZOyIhg" type="3003" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_VvHh2wouEe60rvgXZOyIhg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_VvVkQAouEe60rvgXZOyIhg" type="3020" fontName="Segoe UI">
+          <element xmi:type="datamapper:InNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.4/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvVkQQouEe60rvgXZOyIhg" x="-1" y="1"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_VvVkQgouEe60rvgXZOyIhg" type="3019" fontName="Segoe UI">
+          <element xmi:type="datamapper:OutNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.4/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvVkQwouEe60rvgXZOyIhg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.4"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvHh2gouEe60rvgXZOyIhg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_VvHh3AouEe60rvgXZOyIhg" type="3020" fontName="Segoe UI">
+        <element xmi:type="datamapper:InNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@inNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvHh3QouEe60rvgXZOyIhg" x="-1" y="-11"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_VvHh3gouEe60rvgXZOyIhg" type="3019" fontName="Segoe UI">
+        <element xmi:type="datamapper:OutNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@outNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvHh3wouEe60rvgXZOyIhg"/>
+      </children>
+      <element xmi:type="datamapper:TreeNode" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_VvFsoQouEe60rvgXZOyIhg"/>
+    </children>
+    <element xmi:type="datamapper:Input" href="ReviewsMoreUpvoteMapper.datamapper#//@input"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qlIZUQosEe60rvgXZOyIhg" width="250" height="160"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_qlIZUgosEe60rvgXZOyIhg" type="2003" fontName="Segoe UI">
+    <children xmi:type="notation:Shape" xmi:id="_XnQvMAouEe60rvgXZOyIhg" type="3011" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_XnQvMgouEe60rvgXZOyIhg" type="5003"/>
+      <children xmi:type="notation:Shape" xmi:id="_XnTLcAouEe60rvgXZOyIhg" type="3003" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_XnTLcgouEe60rvgXZOyIhg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_XnVnsAouEe60rvgXZOyIhg" type="3020" fontName="Segoe UI">
+          <element xmi:type="datamapper:InNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0/@node.0/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XnVnsQouEe60rvgXZOyIhg" x="-10" y="4"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_XnVnsgouEe60rvgXZOyIhg" type="3019" fontName="Segoe UI">
+          <element xmi:type="datamapper:OutNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0/@node.0/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XnVnswouEe60rvgXZOyIhg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0/@node.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XnTLcQouEe60rvgXZOyIhg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_XnTLcwouEe60rvgXZOyIhg" type="3003" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_XnTLdQouEe60rvgXZOyIhg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_XnYrAAouEe60rvgXZOyIhg" type="3020" fontName="Segoe UI">
+          <element xmi:type="datamapper:InNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0/@node.1/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XnYrAQouEe60rvgXZOyIhg" x="-10" y="4"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_XnYrAgouEe60rvgXZOyIhg" type="3019" fontName="Segoe UI">
+          <element xmi:type="datamapper:OutNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0/@node.1/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XnYrAwouEe60rvgXZOyIhg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0/@node.1"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XnTLdAouEe60rvgXZOyIhg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_XnTLdgouEe60rvgXZOyIhg" type="3003" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_XnTLeAouEe60rvgXZOyIhg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_XncVYAouEe60rvgXZOyIhg" type="3020" fontName="Segoe UI">
+          <element xmi:type="datamapper:InNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0/@node.2/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XncVYQouEe60rvgXZOyIhg" x="-10" y="4"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_XncVYgouEe60rvgXZOyIhg" type="3019" fontName="Segoe UI">
+          <element xmi:type="datamapper:OutNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0/@node.2/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XncVYwouEe60rvgXZOyIhg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0/@node.2"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XnTLdwouEe60rvgXZOyIhg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_XnTLeQouEe60rvgXZOyIhg" type="3003" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_XnTygAouEe60rvgXZOyIhg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_XnexoAouEe60rvgXZOyIhg" type="3020" fontName="Segoe UI">
+          <element xmi:type="datamapper:InNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0/@node.3/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XnexoQouEe60rvgXZOyIhg" x="-10" y="4"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_XnfYsAouEe60rvgXZOyIhg" type="3019" fontName="Segoe UI">
+          <element xmi:type="datamapper:OutNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0/@node.3/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XnfYsQouEe60rvgXZOyIhg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0/@node.3"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XnTLegouEe60rvgXZOyIhg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_XnTygQouEe60rvgXZOyIhg" type="3003" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_XnTygwouEe60rvgXZOyIhg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_Xnh08AouEe60rvgXZOyIhg" type="3020" fontName="Segoe UI">
+          <element xmi:type="datamapper:InNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0/@node.4/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Xnh08QouEe60rvgXZOyIhg" x="-10" y="4"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_Xnh08gouEe60rvgXZOyIhg" type="3019" fontName="Segoe UI">
+          <element xmi:type="datamapper:OutNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0/@node.4/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_Xnh08wouEe60rvgXZOyIhg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0/@node.4"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XnTyggouEe60rvgXZOyIhg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_XnTyhAouEe60rvgXZOyIhg" type="3020" fontName="Segoe UI">
+        <element xmi:type="datamapper:InNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0/@inNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XnTyhQouEe60rvgXZOyIhg" x="-1" y="-11"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_XnTyhgouEe60rvgXZOyIhg" type="3019" fontName="Segoe UI">
+        <element xmi:type="datamapper:OutNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0/@outNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XnTyhwouEe60rvgXZOyIhg"/>
+      </children>
+      <element xmi:type="datamapper:TreeNode" href="ReviewsMoreUpvoteMapper.datamapper#//@output/@treeNode.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_XnQvMQouEe60rvgXZOyIhg"/>
+    </children>
+    <element xmi:type="datamapper:Output" href="ReviewsMoreUpvoteMapper.datamapper#//@output"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_qlIZUwosEe60rvgXZOyIhg" x="310" width="250" height="160"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_qhoZYQosEe60rvgXZOyIhg"/>
+  <element xmi:type="datamapper:DataMapperRoot" href="ReviewsMoreUpvoteMapper.datamapper#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_ZpaNIAouEe60rvgXZOyIhg" type="4001" source="_VvJXAgouEe60rvgXZOyIhg" target="_XnVnsAouEe60rvgXZOyIhg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_ZpaNIQouEe60rvgXZOyIhg" fontName="Segoe UI"/>
+    <element xmi:type="datamapper:DataMapperLink" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.0/@outNode/@outgoingLink.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_ZpaNIgouEe60rvgXZOyIhg" points="[-2, 0, -252, 0]$[248, 0, -2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ZpcCUAouEe60rvgXZOyIhg" id="CENTER"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_ZpcCUQouEe60rvgXZOyIhg" id="CENTER"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aFz1QAouEe60rvgXZOyIhg" type="4001" source="_VvMaUAouEe60rvgXZOyIhg" target="_XnYrAAouEe60rvgXZOyIhg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aFz1QQouEe60rvgXZOyIhg" fontName="Segoe UI"/>
+    <element xmi:type="datamapper:DataMapperLink" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.1/@outNode/@outgoingLink.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aFz1QgouEe60rvgXZOyIhg" points="[-2, 0, -252, 0]$[248, 0, -2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_aF0cUAouEe60rvgXZOyIhg" id="CENTER"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_aF0cUQouEe60rvgXZOyIhg" id="CENTER"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_aeJcwAouEe60rvgXZOyIhg" type="4001" source="_VvPdogouEe60rvgXZOyIhg" target="_XncVYAouEe60rvgXZOyIhg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_aeJcwQouEe60rvgXZOyIhg" fontName="Segoe UI"/>
+    <element xmi:type="datamapper:DataMapperLink" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.2/@outNode/@outgoingLink.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_aeJcwgouEe60rvgXZOyIhg" points="[-2, 0, -252, 0]$[248, 0, -2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_aeKq4AouEe60rvgXZOyIhg" id="CENTER"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_aeKq4QouEe60rvgXZOyIhg" id="CENTER"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_a1rL8AouEe60rvgXZOyIhg" type="4001" source="_VvR54gouEe60rvgXZOyIhg" target="_XnexoAouEe60rvgXZOyIhg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_a1rL8QouEe60rvgXZOyIhg" fontName="Segoe UI"/>
+    <element xmi:type="datamapper:DataMapperLink" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.3/@outNode/@outgoingLink.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_a1rL8gouEe60rvgXZOyIhg" points="[-2, 0, -252, 0]$[248, 0, -2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_a1rzAAouEe60rvgXZOyIhg" id="CENTER"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_a1rzAQouEe60rvgXZOyIhg" id="CENTER"/>
+  </edges>
+  <edges xmi:type="notation:Connector" xmi:id="_bJs7MAouEe60rvgXZOyIhg" type="4001" source="_VvVkQgouEe60rvgXZOyIhg" target="_Xnh08AouEe60rvgXZOyIhg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_bJs7MQouEe60rvgXZOyIhg" fontName="Segoe UI"/>
+    <element xmi:type="datamapper:DataMapperLink" href="ReviewsMoreUpvoteMapper.datamapper#//@input/@treeNode.0/@node.4/@outNode/@outgoingLink.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_bJs7MgouEe60rvgXZOyIhg" points="[-2, 0, -252, 0]$[248, 0, -2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bJtiQAouEe60rvgXZOyIhg" id="CENTER"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_bJtiQQouEe60rvgXZOyIhg" id="CENTER"/>
+  </edges>
+</notation:Diagram>

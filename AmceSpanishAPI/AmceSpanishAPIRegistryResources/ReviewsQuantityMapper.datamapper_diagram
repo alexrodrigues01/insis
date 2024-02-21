@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_j0U7QAopEe60rvgXZOyIhg" type="DataMapper" name="ReviewsQuantityMapper.datamapper_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_kK5oMAopEe60rvgXZOyIhg" type="2002" fontName="Segoe UI">
+    <children xmi:type="notation:Shape" xmi:id="_l693oAopEe60rvgXZOyIhg" type="3002" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_l693ogopEe60rvgXZOyIhg" type="5002"/>
+      <children xmi:type="notation:Shape" xmi:id="_l7SAsAopEe60rvgXZOyIhg" type="3003" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_l7SnwAopEe60rvgXZOyIhg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_l7hRQAopEe60rvgXZOyIhg" type="3020" fontName="Segoe UI">
+          <element xmi:type="datamapper:InNode" href="ReviewsQuantityMapper.datamapper#//@input/@treeNode.0/@node.0/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7hRQQopEe60rvgXZOyIhg" x="-1" y="1"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_l7h4UAopEe60rvgXZOyIhg" type="3019" fontName="Segoe UI">
+          <element xmi:type="datamapper:OutNode" href="ReviewsQuantityMapper.datamapper#//@input/@treeNode.0/@node.0/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7h4UQopEe60rvgXZOyIhg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="ReviewsQuantityMapper.datamapper#//@input/@treeNode.0/@node.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7SAsQopEe60rvgXZOyIhg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_l7SnwQopEe60rvgXZOyIhg" type="3020" fontName="Segoe UI">
+        <element xmi:type="datamapper:InNode" href="ReviewsQuantityMapper.datamapper#//@input/@treeNode.0/@inNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7SnwgopEe60rvgXZOyIhg" x="-1" y="-11"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_l7SnwwopEe60rvgXZOyIhg" type="3019" fontName="Segoe UI">
+        <element xmi:type="datamapper:OutNode" href="ReviewsQuantityMapper.datamapper#//@input/@treeNode.0/@outNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l7SnxAopEe60rvgXZOyIhg"/>
+      </children>
+      <element xmi:type="datamapper:TreeNode" href="ReviewsQuantityMapper.datamapper#//@input/@treeNode.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_l693oQopEe60rvgXZOyIhg"/>
+    </children>
+    <element xmi:type="datamapper:Input" href="ReviewsQuantityMapper.datamapper#//@input"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kK5oMQopEe60rvgXZOyIhg" width="250" height="160"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_kK6PQAopEe60rvgXZOyIhg" type="2003" fontName="Segoe UI">
+    <children xmi:type="notation:Shape" xmi:id="_nvvA4AopEe60rvgXZOyIhg" type="3011" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_nvvn8AopEe60rvgXZOyIhg" type="5003"/>
+      <children xmi:type="notation:Shape" xmi:id="_nv6nEAopEe60rvgXZOyIhg" type="3003" fontName="Segoe UI">
+        <children xmi:type="notation:DecorationNode" xmi:id="_nv7OIAopEe60rvgXZOyIhg" type="5001"/>
+        <children xmi:type="notation:Shape" xmi:id="_nv9qYAopEe60rvgXZOyIhg" type="3020" fontName="Segoe UI">
+          <element xmi:type="datamapper:InNode" href="ReviewsQuantityMapper.datamapper#//@output/@treeNode.0/@node.0/@inNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nv-RcAopEe60rvgXZOyIhg" x="-10" y="4"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_nv-RcQopEe60rvgXZOyIhg" type="3019" fontName="Segoe UI">
+          <element xmi:type="datamapper:OutNode" href="ReviewsQuantityMapper.datamapper#//@output/@treeNode.0/@node.0/@outNode"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nv-RcgopEe60rvgXZOyIhg"/>
+        </children>
+        <element xmi:type="datamapper:TreeNode" href="ReviewsQuantityMapper.datamapper#//@output/@treeNode.0/@node.0"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nv6nEQopEe60rvgXZOyIhg"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_nv7OIQopEe60rvgXZOyIhg" type="3020" fontName="Segoe UI">
+        <element xmi:type="datamapper:InNode" href="ReviewsQuantityMapper.datamapper#//@output/@treeNode.0/@inNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nv7OIgopEe60rvgXZOyIhg" x="-1" y="-11"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_nv7OIwopEe60rvgXZOyIhg" type="3019" fontName="Segoe UI">
+        <element xmi:type="datamapper:OutNode" href="ReviewsQuantityMapper.datamapper#//@output/@treeNode.0/@outNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nv7OJAopEe60rvgXZOyIhg"/>
+      </children>
+      <element xmi:type="datamapper:TreeNode" href="ReviewsQuantityMapper.datamapper#//@output/@treeNode.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_nvvA4QopEe60rvgXZOyIhg"/>
+    </children>
+    <element xmi:type="datamapper:Output" href="ReviewsQuantityMapper.datamapper#//@output"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_kK6PQQopEe60rvgXZOyIhg" x="310" width="250" height="160"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_j0U7QQopEe60rvgXZOyIhg"/>
+  <element xmi:type="datamapper:DataMapperRoot" href="ReviewsQuantityMapper.datamapper#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_oZP38AopEe60rvgXZOyIhg" type="4001" source="_l7h4UAopEe60rvgXZOyIhg" target="_nv9qYAopEe60rvgXZOyIhg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_oZP38QopEe60rvgXZOyIhg" fontName="Segoe UI"/>
+    <element xmi:type="datamapper:DataMapperLink" href="ReviewsQuantityMapper.datamapper#//@input/@treeNode.0/@node.0/@outNode/@outgoingLink.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_oZP38gopEe60rvgXZOyIhg" points="[-2, 0, -252, 0]$[248, 0, -2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_oZd6YAopEe60rvgXZOyIhg" id="CENTER"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_oZd6YQopEe60rvgXZOyIhg" id="CENTER"/>
+  </edges>
+</notation:Diagram>

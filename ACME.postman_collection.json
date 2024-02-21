@@ -1,0 +1,840 @@
+{
+	"info": {
+		"_postman_id": "34f7bd2a-0070-4ebd-a405-41e953f7da91",
+		"name": "ACME",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "18338238"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Login",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Authtenticates\", function(){\r",
+									"\r",
+									"    pm.response.to.have.status(200);\r",
+									"\r",
+									"    const token = postman.getResponseHeader(\"Authorization\");\r",
+									"    pm.environment.set(\"token\", token);  \r",
+									"\r",
+									"    const userId = pm.response.json().userId;\r",
+									"    pm.environment.set(\"userId\", userId);\r",
+									"\r",
+									"    const username = pm.response.json().username;\r",
+									"    pm.environment.set(\"username\", username);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"username\", \"admin1@mail.com\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"admin1@mail.com\",\r\n    \"password\":\"AdminPW1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/auth/public/login",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"auth",
+								"public",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by ID",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"User exists with id and respective username\", function () {",
+									"    pm.response.to.have.status(200);",
+									"",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.username).to.eql( pm.environment.get(\"username\"));",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/admin/user/{{userId}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								"{{userId}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get User by username",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"User exists with username\", function () {",
+									"",
+									"    pm.response.to.have.status(200);",
+									"",
+									"    const responseJson = pm.response.json();",
+									"    pm.expect(responseJson.username).to.eql( pm.environment.get(\"username\"));",
+									"",
+									"    pm.expect(responseJson.nif).to.eql(\"355489123\");",
+									"",
+									"    pm.expect(responseJson.authorities[0].authority).to.eql(\"Admin\");",
+									"",
+									"    // ...",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{token}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST}}/admin/user/username/{{username}}",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"admin",
+								"user",
+								"username",
+								"{{username}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Login Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Authtenticates\", function(){\r",
+									"\r",
+									"    pm.response.to.have.status(200);\r",
+									"\r",
+									"    const token = postman.getResponseHeader(\"Authorization\");\r",
+									"    pm.environment.set(\"token\", token);  \r",
+									"\r",
+									"    const userId = pm.response.json().userId;\r",
+									"    pm.environment.set(\"userId\", userId);\r",
+									"\r",
+									"    const username = pm.response.json().username;\r",
+									"    pm.environment.set(\"username\", username);\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"username\", \"admin1@mail.com\");"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"user2@mail.com\",\r\n    \"password\":\"userPW2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST}}/auth/public/login",
+							"host": [
+								"{{HOST}}"
+							],
+							"path": [
+								"auth",
+								"public",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get catalog",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Products Found\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"const jsonData = pm.response.json();",
+									"",
+									"pm.environment.set(\"catalogLength\", jsonData.length);"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_GET}}/products",
+							"host": [
+								"{{HOST_GET}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a product",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var sku = randomString(12, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');",
+									"var designation = pm.variables.replaceIn('{{$randomLoremWords}}')",
+									"var description = pm.variables.replaceIn('{{$randomLoremSentence}}')",
+									"",
+									"pm.environment.set(\"sku\", sku);",
+									"pm.environment.set(\"designation\", designation);",
+									"pm.environment.set(\"description\", description);",
+									"",
+									"function randomString(length, chars) {",
+									"    var result = '';",
+									"    for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];",
+									"    return result;",
+									"}",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Product created\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"A new product was returned\", function () {",
+									"",
+									"    const product = pm.response.json();",
+									"",
+									"    const sku = pm.environment.get(\"sku\");",
+									"    const designation = pm.environment.get(\"designation\");",
+									"",
+									"    pm.expect(product.sku).to.equals(sku);",
+									"    pm.expect(product.designation).to.equals(designation);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sku\": \"{{sku}}\",\n    \"designation\": \"{{designation}}\",\n    \"description\": \"{{description}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_POST}}/products",
+							"host": [
+								"{{HOST_POST}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Fail to create a duplicated product",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(409);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sku\": \"{{sku}}\",\n    \"designation\": \"{{designation}}\",\n    \"description\": \"{{description}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_POST}}/products",
+							"host": [
+								"{{HOST_POST}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get updated catalog",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Products Found\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"",
+									"const previousCatalogLength = pm.environment.get(\"catalogLength\");",
+									"const expectedCatalogLength = previousCatalogLength + 1",
+									"",
+									"const lastProduct = jsonData[expectedCatalogLength-1];",
+									"",
+									"pm.test(\"A new product was included in catalog\", function () {",
+									"    pm.expect(jsonData.length).to.equals(expectedCatalogLength);",
+									"});",
+									"",
+									"pm.test(\"The new product has the correct data\", function () {",
+									"    const sku = pm.environment.get(\"sku\");",
+									"    const designation = pm.environment.get(\"designation\");",
+									"",
+									"    pm.expect(lastProduct.sku).to.equals(sku);",
+									"    pm.expect(lastProduct.designation).to.equals(designation);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_GET}}/products",
+							"host": [
+								"{{HOST_GET}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product by sku",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Product Found\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"",
+									"const sku = pm.environment.get(\"sku\");",
+									"const designation = pm.environment.get(\"designation\");",
+									"",
+									"pm.test(\"Checking Product sku\", function () {    ",
+									"    pm.expect(jsonData.sku).to.eql(sku);",
+									"});",
+									"pm.test(\"Checking Product designation\", function () {",
+									"    pm.expect(jsonData.designation).to.eql(designation);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_GET}}/products/{{sku}}",
+							"host": [
+								"{{HOST_GET}}"
+							],
+							"path": [
+								"products",
+								"{{sku}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get product(s) by designation",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Product Found\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const jsonData = pm.response.json();",
+									"const product = jsonData[0];",
+									"",
+									"const sku = pm.environment.get(\"sku\");",
+									"const designation = pm.environment.get(\"designation\");",
+									"const description = pm.environment.get(\"description\");",
+									"",
+									"pm.test(\"Checking Product sku\", function () {    ",
+									"    pm.expect(product.sku).to.eql(sku);",
+									"});",
+									"pm.test(\"Checking Product designation\", function () {",
+									"    pm.expect(product.designation).to.eql(designation);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_GET}}/products/designation/{{designation}}",
+							"host": [
+								"{{HOST_GET}}"
+							],
+							"path": [
+								"products",
+								"designation",
+								"{{designation}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Patch designation and descritpion of a product",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"",
+									"var designationPatched = pm.variables.replaceIn('{{$randomLoremWords}}')",
+									"var descriptionPatched = pm.variables.replaceIn('{{$randomLoremSentence}}')",
+									"",
+									"pm.environment.set(\"designationPatched\", designationPatched);",
+									"pm.environment.set(\"descriptionPatched\", descriptionPatched);"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Product patched\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"The product was patched\", function () {",
+									"",
+									"    const product = pm.response.json();",
+									"",
+									"    const sku = pm.environment.get(\"sku\");",
+									"    const designationPatched = pm.environment.get(\"designationPatched\");",
+									"",
+									"    pm.expect(product.sku).to.equals(sku);",
+									"    pm.expect(product.designation).to.equals(designationPatched);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"designation\": \"{{designationPatched}}\",\n    \"description\": \"{{descriptionPatched}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_POST}}/products/{{sku}}",
+							"host": [
+								"{{HOST_POST}}"
+							],
+							"path": [
+								"products",
+								"{{sku}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check if patched",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Product found\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Product has been correctly patched\", function () {",
+									"",
+									"    const product = pm.response.json();",
+									"",
+									"    const sku = pm.environment.get(\"sku\");",
+									"    const designationPatched = pm.environment.get(\"designationPatched\");",
+									"",
+									"    pm.expect(product.sku).to.equals(sku);",
+									"    pm.expect(product.designation).to.equals(designationPatched);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_GET}}/products/{{sku}}",
+							"host": [
+								"{{HOST_GET}}"
+							],
+							"path": [
+								"products",
+								"{{sku}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create a product to delete",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var sku2Delete = randomString(12, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ');",
+									"var designation2Delete = pm.variables.replaceIn('{{$randomLoremWords}}')",
+									"var description2Delete = pm.variables.replaceIn('{{$randomLoremSentence}}')",
+									"",
+									"pm.environment.set(\"sku2Delete\", sku2Delete);",
+									"pm.environment.set(\"designation2Delete\", designation2Delete);",
+									"pm.environment.set(\"description2Delete\", description2Delete);",
+									"",
+									"console.log(\"sku2Delete: \" + sku2Delete );",
+									"console.log(\"designation2Delete: \" + designation2Delete );",
+									"console.log(\"description2Delete: \" + description2Delete );",
+									"",
+									"function randomString(length, chars) {",
+									"    var result = '';",
+									"    for (var i = length; i > 0; --i) result += chars[Math.floor(Math.random() * chars.length)];",
+									"    return result;",
+									"}",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Product created\", function () {",
+									"    pm.response.to.have.status(201);",
+									"});",
+									"",
+									"pm.test(\"A new product was returned\", function () {",
+									"",
+									"    const product = pm.response.json();",
+									"",
+									"    const sku2Delete = pm.environment.get(\"sku2Delete\");",
+									"    const designation2Delete = pm.environment.get(\"designation2Delete\");",
+									"",
+									"    pm.expect(product.sku).to.equals(sku2Delete);",
+									"    pm.expect(product.designation).to.equals(designation2Delete);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"sku\": \"{{sku2Delete}}\",\n    \"designation\": \"{{designation2Delete}}\",\n    \"description\": \"{{description2Delete}}\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{HOST_POST}}/products",
+							"host": [
+								"{{HOST_POST}}"
+							],
+							"path": [
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a Product by sku",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Product was deleted\", function () {",
+									"    pm.response.to.have.status(204);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_POST}}/products/{{sku2Delete}}",
+							"host": [
+								"{{HOST_POST}}"
+							],
+							"path": [
+								"products",
+								"{{sku2Delete}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Check if deleted",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Product not found\", function () {",
+									"    pm.response.to.have.status(404);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{HOST_GET}}/products/{{sku2Delete}}",
+							"host": [
+								"{{HOST_GET}}"
+							],
+							"path": [
+								"products",
+								"{{sku2Delete}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "{{token}}",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "HOST",
+			"value": "http://localhost:8080",
+			"type": "string"
+		},
+		{
+			"key": "HOST_POST",
+			"value": "http://localhost:8040",
+			"type": "string"
+		},
+		{
+			"key": "HOST_GET",
+			"value": "http://localhost:8090",
+			"type": "string"
+		}
+	]
+}

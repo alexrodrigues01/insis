@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" contentScriptType="application/ecmascript" contentStyleType="text/css" height="542px" preserveAspectRatio="none" style="width:1152px;height:542px;background:#FFFFFF;" version="1.1" viewBox="0 0 1152 542" width="1152px" zoomAndPan="magnify"><defs><filter height="300%" id="f1w4tmj98q0wnp" width="300%" x="-1" y="-1"><feGaussianBlur result="blurOut" stdDeviation="2.0"/><feColorMatrix in="blurOut" result="blurOut2" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .4 0"/><feOffset dx="4.0" dy="4.0" in="blurOut2" result="blurOut3"/><feBlend in="SourceGraphic" in2="blurOut3" mode="normal"/></filter></defs><g><rect fill="#DDDDDD" height="530.8613" style="stroke:#A80036;stroke-width:1.0;" width="943.5" x="202.5" y="6"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="82" x="633.25" y="20.0283">ProductsPost</text><rect fill="#FFFFFF" filter="url(#f1w4tmj98q0wnp)" height="305.0371" style="stroke:#A80036;stroke-width:1.0;" width="10" x="266" y="125.2031"/><rect fill="#FFFFFF" filter="url(#f1w4tmj98q0wnp)" height="136.873" style="stroke:#A80036;stroke-width:1.0;" width="10" x="512" y="156.4941"/><rect fill="#FFFFFF" filter="url(#f1w4tmj98q0wnp)" height="61.291" style="stroke:#A80036;stroke-width:1.0;" width="10" x="848" y="232.0762"/><rect fill="#FFFFFF" filter="url(#f1w4tmj98q0wnp)" height="30" style="stroke:#A80036;stroke-width:1.0;" width="10" x="965" y="263.3672"/><rect fill="#FFFFFF" filter="url(#f1w4tmj98q0wnp)" height="30" style="stroke:#A80036;stroke-width:1.0;" width="10" x="1078.5" y="368.9492"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="98" x2="98" y1="91.9121" y2="448.2402"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="270.5" x2="270.5" y1="91.9121" y2="448.2402"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="517" x2="517" y1="91.9121" y2="448.2402"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="852.5" x2="852.5" y1="91.9121" y2="448.2402"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="970" x2="970" y1="91.9121" y2="448.2402"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:5.0,5.0;" x1="1083" x2="1083" y1="91.9121" y2="448.2402"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="5" y="88.3984">Anonymous_RegisteredUser</text><ellipse cx="98" cy="16.291" fill="#FEFECE" filter="url(#f1w4tmj98q0wnp)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M98,24.291 L98,51.291 M85,32.291 L111,32.291 M98,51.291 L85,66.291 M98,51.291 L111,66.291 " fill="none" filter="url(#f1w4tmj98q0wnp)" style="stroke:#A80036;stroke-width:2.0;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="180" x="5" y="462.3477">Anonymous_RegisteredUser</text><ellipse cx="98" cy="475.8613" fill="#FEFECE" filter="url(#f1w4tmj98q0wnp)" rx="8" ry="8" style="stroke:#A80036;stroke-width:2.0;"/><path d="M98,483.8613 L98,510.8613 M85,491.8613 L111,491.8613 M98,510.8613 L85,525.8613 M98,510.8613 L111,525.8613 " fill="none" filter="url(#f1w4tmj98q0wnp)" style="stroke:#A80036;stroke-width:2.0;"/><rect fill="#FEFECE" filter="url(#f1w4tmj98q0wnp)" height="32.6211" style="stroke:#A80036;stroke-width:1.5;" width="125" x="206.5" y="54.291"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="213.5" y="76.3984">ProductController</text><rect fill="#FEFECE" filter="url(#f1w4tmj98q0wnp)" height="32.6211" style="stroke:#A80036;stroke-width:1.5;" width="125" x="206.5" y="447.2402"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="111" x="213.5" y="469.3477">ProductController</text><rect fill="#FEFECE" filter="url(#f1w4tmj98q0wnp)" height="32.6211" style="stroke:#A80036;stroke-width:1.5;" width="110" x="460" y="54.291"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="467" y="76.3984">ProductService</text><rect fill="#FEFECE" filter="url(#f1w4tmj98q0wnp)" height="32.6211" style="stroke:#A80036;stroke-width:1.5;" width="110" x="460" y="447.2402"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="96" x="467" y="469.3477">ProductService</text><rect fill="#FEFECE" filter="url(#f1w4tmj98q0wnp)" height="32.6211" style="stroke:#A80036;stroke-width:1.5;" width="97" x="802.5" y="54.291"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="809.5" y="76.3984">ProductRepo</text><rect fill="#FEFECE" filter="url(#f1w4tmj98q0wnp)" height="32.6211" style="stroke:#A80036;stroke-width:1.5;" width="97" x="802.5" y="447.2402"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="83" x="809.5" y="469.3477">ProductRepo</text><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="925" y="88.3984">ProductsPost</text><path d="M952,37.291 C952,27.291 970,27.291 970,27.291 C970,27.291 988,27.291 988,37.291 L988,63.291 C988,73.291 970,73.291 970,73.291 C970,73.291 952,73.291 952,63.291 L952,37.291 " fill="#FEFECE" filter="url(#f1w4tmj98q0wnp)" style="stroke:#000000;stroke-width:1.5;"/><path d="M952,37.291 C952,47.291 970,47.291 970,47.291 C970,47.291 988,47.291 988,37.291 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="84" x="925" y="462.3477">ProductsPost</text><path d="M952,475.8613 C952,465.8613 970,465.8613 970,465.8613 C970,465.8613 988,465.8613 988,475.8613 L988,501.8613 C988,511.8613 970,511.8613 970,511.8613 C970,511.8613 952,511.8613 952,501.8613 L952,475.8613 " fill="#FEFECE" filter="url(#f1w4tmj98q0wnp)" style="stroke:#000000;stroke-width:1.5;"/><path d="M952,475.8613 C952,485.8613 970,485.8613 970,485.8613 C970,485.8613 988,485.8613 988,475.8613 " fill="none" style="stroke:#000000;stroke-width:1.5;"/><rect fill="#FEFECE" filter="url(#f1w4tmj98q0wnp)" height="32.6211" style="stroke:#A80036;stroke-width:1.5;" width="113" x="1025" y="54.291"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="1032" y="76.3984">MessageBroker</text><rect fill="#FEFECE" filter="url(#f1w4tmj98q0wnp)" height="32.6211" style="stroke:#A80036;stroke-width:1.5;" width="113" x="1025" y="447.2402"/><text fill="#000000" font-family="sans-serif" font-size="14" lengthAdjust="spacing" textLength="99" x="1032" y="469.3477">MessageBroker</text><rect fill="#FFFFFF" filter="url(#f1w4tmj98q0wnp)" height="305.0371" style="stroke:#A80036;stroke-width:1.0;" width="10" x="266" y="125.2031"/><rect fill="#FFFFFF" filter="url(#f1w4tmj98q0wnp)" height="136.873" style="stroke:#A80036;stroke-width:1.0;" width="10" x="512" y="156.4941"/><rect fill="#FFFFFF" filter="url(#f1w4tmj98q0wnp)" height="61.291" style="stroke:#A80036;stroke-width:1.0;" width="10" x="848" y="232.0762"/><rect fill="#FFFFFF" filter="url(#f1w4tmj98q0wnp)" height="30" style="stroke:#A80036;stroke-width:1.0;" width="10" x="965" y="263.3672"/><rect fill="#FFFFFF" filter="url(#f1w4tmj98q0wnp)" height="30" style="stroke:#A80036;stroke-width:1.0;" width="10" x="1078.5" y="368.9492"/><polygon fill="#A80036" points="254,121.2031,264,125.2031,254,129.2031,258,125.2031" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="98" x2="260" y1="125.2031" y2="125.2031"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="105" y="119.9404">1</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="93" x="116" y="119.9404">POST /products</text><polygon fill="#A80036" points="500,152.4941,510,156.4941,500,160.4941,504,156.4941" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="276" x2="506" y1="156.4941" y2="156.4941"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="283" y="151.2314">2</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="206" x="294" y="151.2314">create(sku,designation, description)</text><line style="stroke:#A80036;stroke-width:1.0;" x1="522" x2="564" y1="187.7852" y2="187.7852"/><line style="stroke:#A80036;stroke-width:1.0;" x1="564" x2="564" y1="187.7852" y2="200.7852"/><line style="stroke:#A80036;stroke-width:1.0;" x1="523" x2="564" y1="200.7852" y2="200.7852"/><polygon fill="#A80036" points="533,196.7852,523,200.7852,533,204.7852,529,200.7852" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="529" y="182.5225">3</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="301" x="540" y="182.5225">product = new Product(sku,designation, description)</text><polygon fill="#A80036" points="836,228.0762,846,232.0762,836,236.0762,840,232.0762" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="522" x2="842" y1="232.0762" y2="232.0762"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="529" y="226.8135">4</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="132" x="540" y="226.8135">product= save(product)</text><polygon fill="#A80036" points="953,259.3672,963,263.3672,953,267.3672,957,263.3672" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="858" x2="959" y1="263.3672" y2="263.3672"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="865" y="258.1045">5</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="77" x="876" y="258.1045">save(product)</text><line style="stroke:#A80036;stroke-width:1.0;" x1="276" x2="318" y1="324.6582" y2="324.6582"/><line style="stroke:#A80036;stroke-width:1.0;" x1="318" x2="318" y1="324.6582" y2="337.6582"/><line style="stroke:#A80036;stroke-width:1.0;" x1="277" x2="318" y1="337.6582" y2="337.6582"/><polygon fill="#A80036" points="287,333.6582,277,337.6582,287,341.6582,283,337.6582" style="stroke:#A80036;stroke-width:1.0;"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="283" y="319.3955">6</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="151" x="294" y="319.3955">new event(update,product)</text><polygon fill="#A80036" points="1066.5,364.9492,1076.5,368.9492,1066.5,372.9492,1070.5,368.9492" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;" x1="276" x2="1072.5" y1="368.9492" y2="368.9492"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="283" y="363.6865">7</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="119" x="294" y="363.6865">sendMessage(event)</text><polygon fill="#A80036" points="109,426.2402,99,430.2402,109,434.2402,105,430.2402" style="stroke:#A80036;stroke-width:1.0;"/><line style="stroke:#A80036;stroke-width:1.0;stroke-dasharray:2.0,2.0;" x1="103" x2="270" y1="430.2402" y2="430.2402"/><text fill="#000000" font-family="sans-serif" font-size="13" font-weight="bold" lengthAdjust="spacing" textLength="7" x="115" y="424.9775">8</text><text fill="#000000" font-family="sans-serif" font-size="13" lengthAdjust="spacing" textLength="133" x="126" y="424.9775">Retorna o novo produto</text><!--MD5=[7173213a8e6b697a411f04ece2d456fd]
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor Anonymous_RegisteredUser as USER
+box "ProductsPost"
+participant "ProductController" as CTRL
+participant "ProductService" as SERV
+participant "ProductRepo" as REPO
+database "ProductsPost" as DB
+participant "MessageBroker" as MSG
+
+USER -> CTRL : POST /products
+activate CTRL
+    CTRL-> SERV : create(sku,designation, description)
+    activate SERV
+        SERV -> SERV : product = new Product(sku,designation, description)
+        SERV -> REPO: product= save(product)
+                activate REPO
+                    REPO -> DB : save(product)
+                    activate DB
+                    deactivate DB
+                deactivate REPO
+
+    deactivate SERV
+                CTRL -> CTRL : new event(update,product)
+                CTRL -> MSG : sendMessage(event)
+                    activate MSG
+                    deactivate MSG
+CTRL - -> USER : Retorna o novo produto
+deactivate CTRL
+@enduml
+
+@startuml
+
+autonumber
+actor Anonymous_RegisteredUser as USER
+box "ProductsPost"
+participant "ProductController" as CTRL
+participant "ProductService" as SERV
+participant "ProductRepo" as REPO
+database "ProductsPost" as DB
+participant "MessageBroker" as MSG
+
+USER -> CTRL : POST /products
+activate CTRL
+    CTRL-> SERV : create(sku,designation, description)
+    activate SERV
+        SERV -> SERV : product = new Product(sku,designation, description)
+        SERV -> REPO: product= save(product)
+                activate REPO
+                    REPO -> DB : save(product)
+                    activate DB
+                    deactivate DB
+                deactivate REPO
+
+    deactivate SERV
+                CTRL -> CTRL : new event(update,product)
+                CTRL -> MSG : sendMessage(event)
+                    activate MSG
+                    deactivate MSG
+CTRL - -> USER : Retorna o novo produto
+deactivate CTRL
+@enduml
+
+PlantUML version 1.2021.11(Sat Oct 02 14:26:11 WEST 2021)
+(GPL source distribution)
+Java Runtime: OpenJDK Runtime Environment
+JVM: OpenJDK 64-Bit Server VM
+Default Encoding: Cp1252
+Language: pt
+Country: PT
+--></g></svg>

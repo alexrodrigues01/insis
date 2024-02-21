@@ -1,0 +1,20 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+var count_i_inputroot_0ad808d6_45a2_4314_addf_1db88ad8c68a = 0;
+outputroot =  [];
+
+for(i_inputroot_0ad808d6_45a2_4314_addf_1db88ad8c68a in inputroot){
+outputroot[count_i_inputroot_0ad808d6_45a2_4314_addf_1db88ad8c68a] =  {};
+outputroot[count_i_inputroot_0ad808d6_45a2_4314_addf_1db88ad8c68a].gustos = inputroot[i_inputroot_0ad808d6_45a2_4314_addf_1db88ad8c68a].upVotes;
+outputroot[count_i_inputroot_0ad808d6_45a2_4314_addf_1db88ad8c68a].disgustos = inputroot[i_inputroot_0ad808d6_45a2_4314_addf_1db88ad8c68a].downVotes;
+outputroot[count_i_inputroot_0ad808d6_45a2_4314_addf_1db88ad8c68a].revisionId = inputroot[i_inputroot_0ad808d6_45a2_4314_addf_1db88ad8c68a].reviewId;
+
+count_i_inputroot_0ad808d6_45a2_4314_addf_1db88ad8c68a++;
+}
+return outputroot;
+};
+
+
+
+

@@ -1,0 +1,33 @@
+{
+  "$schema" : "http://wso2.org/json-schema/wso2-data-mapper-v5.0.0/schema#",
+  "outputType" : "JSON",
+  "id" : "http://wso2jsonschema.org",
+  "title" : "root",
+  "type" : "array",
+  "items" : [ {
+    "properties" : {
+      "revisionId" : {
+        "id" : "http://wso2jsonschema.org/0/revisionId",
+        "type" : "string"
+      },
+      "revisionTexto" : {
+        "id" : "http://wso2jsonschema.org/0/revisionTexto",
+        "type" : "string"
+      },
+      "fechaDePublicacion" : {
+        "id" : "http://wso2jsonschema.org/0/fechaDePublicacion",
+        "type" : "string"
+      },
+      "gustos" : {
+        "id" : "http://wso2jsonschema.org/0/gustos",
+        "type" : "number"
+      },
+      "disgustos" : {
+        "id" : "http://wso2jsonschema.org/0/disgustos",
+        "type" : "number"
+      }
+    },
+    "id" : "http://wso2jsonschema.org/0",
+    "type" : "object"
+  } ]
+}

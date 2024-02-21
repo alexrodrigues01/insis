@@ -1,0 +1,46 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor RegisteredUser as USER
+box "VotesPost"
+participant "VotesController" as CTRL
+participant "VotesService" as SERV
+participant "ReviewRepo" as REPO2
+participant "VotesRepo" as REPO
+database "VotesPost" as DB
+participant "MessageBroker" as MSG
+participant "Vote" as VT
+
+USER -> CTRL : POST /Vote
+activate CTRL
+    CTRL-> SERV : create(voteDTO)
+    activate SERV
+        SERV -> REPO2: checkReview = FindReview(voteDTO.reviewID)
+        activate REPO2
+            REPO2 -> DB : FindReview(voteDTO.reviewID)
+            activate DB
+            deactivate DB
+        deactivate REPO2    
+            SERV -> VT : voteFinal = new Vote(userId,reviewId,vote)
+            activate VT
+            deactivate VT
+            SERV -> REPO: voteFinal= save(voteFinal)
+                    activate REPO
+                        REPO -> DB : save(voteFinal)
+                        activate DB
+                        deactivate DB
+                    deactivate REPO
+                
+
+    deactivate SERV
+                CTRL -> SERV : sendMessage(voteFinal)
+                activate SERV
+                    SERV -> SERV: messageInfo = new MessageInformationDTO(CREATE,Vote,voteFinal)
+                    SERV -> MSG : sendMessage(messageInfo)
+                        activate MSG
+                        deactivate MSG
+                deactivate SERV
+CTRL --> USER : Retorna o novo voto
+deactivate CTRL
+@enduml

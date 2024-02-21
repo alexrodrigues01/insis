@@ -1,0 +1,37 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor Registered as USER
+box "ReviewsGet"
+participant "ReviewController" as CTRL
+participant "ReviewService" as SERV
+participant "ProductRepo" as REPO
+participant "ReviewRepo" as REPO2
+database "ReviewsGet" as DB
+participant "MessageBroker" as MSG
+
+USER -> CTRL : GET /products/{sku}/reviews/{status}
+activate CTRL
+    CTRL-> SERV : getReviewsOfProduct(sku, status)
+    activate SERV
+        SERV -> REPO: product= findBySku(sku)
+                activate REPO
+                    REPO -> DB : findBySku(sku)
+                    activate DB
+                    deactivate DB
+                deactivate REPO
+        SERV -> REPO2 : findByProductIdStatus(product, status)
+            activate REPO2
+                REPO2 -> DB : findByProductIdStatus(product, status)
+                     activate DB
+                     deactivate DB
+            deactivate REPO2
+    deactivate SERV
+CTRL -> CTRL : event = new event(Get,reviews)
+CTRL -> MSG : sendMessage(event)
+    activate MSG
+    deactivate MSG
+CTRL --> USER : Retorna as reviews
+deactivate CTRL
+@enduml

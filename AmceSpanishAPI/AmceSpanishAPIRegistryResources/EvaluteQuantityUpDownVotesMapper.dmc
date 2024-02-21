@@ -1,0 +1,10 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+outputroot =  {};
+outputroot.gustos = inputroot.upVotes;
+outputroot.disgustos = inputroot.downVotes;
+return outputroot;
+};
+
+

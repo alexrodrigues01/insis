@@ -1,0 +1,31 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor Anonymous_RegisteredUser as USER
+box ProductsGet
+participant "ProductController" as CTRL
+participant "ProductService" as SERV
+participant "ProductRepo" as REPO
+database "ProductsGet" as DB
+participant "MessageBroker" as MSG
+
+USER -> CTRL : GET /products
+activate CTRL
+    CTRL-> SERV : getCatalog()
+    activate SERV
+        SERV -> REPO: findAll()
+        activate REPO
+            REPO -> DB : findAll()
+            activate DB
+            deactivate DB
+        deactivate REPO
+
+    deactivate SERV
+                CTRL -> CTRL : new event(update,product)
+                CTRL -> MSG : sendMessage(event)
+                    activate MSG
+                    deactivate MSG
+CTRL --> USER : Retorna o catálogo de produtos
+deactivate CTRL
+@enduml

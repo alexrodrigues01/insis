@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/spanish" name="amceSpanish" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="GET" uri-template="/quantityReviews">
+        <inSequence>
+            <property expression="$url:userId" name="uri.var.userId" scope="default" type="STRING"/>
+            <log>
+                <property expression="$ctx:uri.var.userId" name="userId"/>
+            </log>
+            <call>
+                <endpoint>
+                    <http method="get" uri-template="http://localhost:8091/reviews/{uri.var.userId}">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>-1</progressionFactor>
+                            <maximumDuration>0</maximumDuration>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </http>
+                </endpoint>
+            </call>
+            <script language="js"><![CDATA[var jsonResponse = mc.getPayloadJSON();
+
+var numberOfReviews = jsonResponse.length;
+
+var payload = {
+  number_Of_Reviews: numberOfReviews
+};
+
+mc.setPayloadJSON(payload);]]></script>
+            <datamapper config="gov:datamapper/ReviewsQuantityMapper.dmc" inputSchema="gov:datamapper/ReviewsQuantityMapper_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/ReviewsQuantityMapper_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/ReviewsQuantityMapper_xsltStyleSheet.xml"/>
+            <respond/>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/VotesByReviewsByUserId">
+        <inSequence>
+            <property expression="$url:userId" name="uri.var.userId" scope="default" type="STRING"/>
+            <call>
+                <endpoint>
+                    <http method="get" uri-template="http://localhost:8091/reviews/{uri.var.userId}">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>-1</progressionFactor>
+                            <maximumDuration>0</maximumDuration>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </http>
+                </endpoint>
+            </call>
+            <iterate expression="//idReview">
+                <target>
+                    <sequence>
+                        <property expression="json-eval($.idReview)" name="uri.var.idReview" scope="default" type="STRING"/>
+                        <call>
+                            <endpoint>
+                                <http method="get" uri-template="http://localhost:8636/api/Vote/GetVoteByReview/{uri.var.idReview}">
+                                    <suspendOnFailure>
+                                        <initialDuration>-1</initialDuration>
+                                        <progressionFactor>-1</progressionFactor>
+                                        <maximumDuration>0</maximumDuration>
+                                    </suspendOnFailure>
+                                    <markForSuspension>
+                                        <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                                    </markForSuspension>
+                                </http>
+                            </endpoint>
+                        </call>
+                    </sequence>
+                </target>
+            </iterate>
+            <aggregate>
+                <completeCondition>
+                    <messageCount max="-1" min="-1"/>
+                </completeCondition>
+                <onComplete aggregateElementType="root" expression="json-eval($)">
+                    <script language="js"><![CDATA[var voteCounts = [];
+
+var votes = mc.getPayloadJSON();
+
+// Iterate through each vote array
+for (var i = 0; i < votes.length; i++) {
+  var voteArray = votes[i];
+  // Iterate through each vote object in the vote array
+  for (var j = 0; j < voteArray.length; j++) {
+    var vote = voteArray[j];
+    var reviewId = vote.reviewId;
+    var voteType = vote.vote;
+
+    // Find the existing vote object in voteCounts array based on reviewId
+    var existingVote = voteCounts.find(function (v) {
+      return v.reviewId === reviewId;
+    });
+
+    if (existingVote) {
+      // Increment the vote count based on the vote type
+      if (voteType === "upVote") {
+        existingVote.upVotes++;
+      } else if (voteType === "downVote") {
+        existingVote.downVotes++;
+      }
+    } else {
+      // Create a new vote object and add it to voteCounts array
+      var newVote = {
+        upVotes: 0,
+        downVotes: 0,
+        reviewId: reviewId
+      };
+
+      // Increment the vote count based on the vote type
+      if (voteType === "upVote") {
+        newVote.upVotes = 1;
+      } else if (voteType === "downVote") {
+        newVote.downVotes = 1;
+      }
+
+      voteCounts.push(newVote);
+    }
+  }
+}
+
+// Convert voteCounts array to JSON
+var jsonPayload = JSON.stringify(voteCounts);
+
+mc.setPayloadJSON(jsonPayload);]]></script>
+                    <datamapper config="gov:datamapper/VotesByReviewsByUserIdMapper.dmc" inputSchema="gov:datamapper/VotesByReviewsByUserIdMapper_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/VotesByReviewsByUserIdMapper_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/VotesByReviewsByUserIdMapper_xsltStyleSheet.xml"/>
+                    <respond/>
+                </onComplete>
+            </aggregate>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/reviewsMoreUpvote">
+        <inSequence>
+            <property expression="$url:value" name="value" scope="default" type="STRING"/>
+            <call>
+                <endpoint key="GetProducts"/>
+            </call>
+            <iterate expression="//sku">
+                <target>
+                    <sequence>
+                        <property expression="json-eval($.sku)" name="uri.var.queryString" scope="default" type="STRING"/>
+                        <call>
+                            <endpoint>
+                                <http method="get" uri-template="http://localhost:8091/products/{uri.var.queryString}/reviews/approved">
+                                    <suspendOnFailure>
+                                        <initialDuration>-1</initialDuration>
+                                        <progressionFactor>-1</progressionFactor>
+                                        <maximumDuration>0</maximumDuration>
+                                    </suspendOnFailure>
+                                    <markForSuspension>
+                                        <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                                    </markForSuspension>
+                                </http>
+                            </endpoint>
+                        </call>
+                    </sequence>
+                </target>
+            </iterate>
+            <iterate expression="json-eval($)" id="getReview">
+                <target>
+                    <sequence>
+                        <log>
+                            <property expression="json-eval($)" name="json"/>
+                        </log>
+                        <propertyGroup>
+                            <property expression="json-eval($.idReview)" name="idReview" scope="default" type="STRING"/>
+                            <property expression="json-eval($.reviewText)" name="reviewText" scope="default" type="STRING"/>
+                            <property expression="json-eval($.publishingDate)" name="publishingDate" scope="default" type="STRING"/>
+                            <property expression="json-eval($.idReview)" name="uri.var.idReview" scope="default" type="STRING"/>
+                        </propertyGroup>
+                        <log>
+                            <property expression="$ctx:idReview" name="REVIEW ID"/>
+                        </log>
+                        <call>
+                            <endpoint>
+                                <http method="get" uri-template="http://localhost:8636/api/Vote/GetVoteByReview/{uri.var.idReview}">
+                                    <suspendOnFailure>
+                                        <initialDuration>-1</initialDuration>
+                                        <progressionFactor>-1</progressionFactor>
+                                        <maximumDuration>0</maximumDuration>
+                                    </suspendOnFailure>
+                                    <markForSuspension>
+                                        <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                                    </markForSuspension>
+                                </http>
+                            </endpoint>
+                        </call>
+                        <script language="js"><![CDATA[// Access the payload JSON data
+var payloadJson = mc.getPayloadJSON();
+
+// Initialize counters for upvotes and downvotes
+var upvotes = 0;
+var downvotes = 0;
+
+// Loop through each element in the JSON array
+for (var i = 0; i < payloadJson.length; i++) {
+    var vote = payloadJson[i].vote;
+    if (vote === "upVote") {
+        upvotes++;
+    } else if (vote === "downVote") {
+        downvotes++;
+    }
+}
+
+var value = parseInt(mc.getProperty("value"))
+
+var idReview = mc.getProperty("idReview");
+var reviewText = mc.getProperty("reviewText");
+var publishingDate = mc.getProperty("publishingDate");
+
+var finalJson = {
+    idReview: idReview,
+    reviewText: reviewText,
+    publishingDate: publishingDate,
+    upvote: upvotes,
+    downvote: downvotes
+};
+
+if(upvotes >value){
+    // Update the payload with the modified JSON
+    mc.setPayloadJSON(finalJson);
+}else{
+    mc.setPayloadJSON(null);
+}]]></script>
+                    </sequence>
+                </target>
+            </iterate>
+            <aggregate>
+                <completeCondition>
+                    <messageCount max="-1" min="-1"/>
+                </completeCondition>
+                <onComplete aggregateElementType="root" expression="json-eval($)">
+                    <script language="js"><![CDATA[var payloadJson = mc.getPayloadJSON();
+
+var cleanedArray = payloadJson.filter(function(obj) {
+  return Object.keys(obj).length >0;
+});
+
+mc.setPayloadJSON(cleanedArray);]]></script>
+                    <datamapper config="gov:datamapper/ReviewsMoreUpvoteMapper.dmc" inputSchema="gov:datamapper/ReviewsMoreUpvoteMapper_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/ReviewsMoreUpvoteMapper_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/ReviewsMoreUpvoteMapper_xsltStyleSheet.xml"/>
+                    <respond/>
+                </onComplete>
+            </aggregate>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/reviews/upvote/percentage">
+        <inSequence>
+            <property expression="$url:value" name="value" scope="default" type="STRING"/>
+            <call>
+                <endpoint key="GetProducts"/>
+            </call>
+            <iterate expression="json-eval($)">
+                <target>
+                    <sequence>
+                        <propertyGroup>
+                            <property expression="json-eval($.sku)" name="uri.var.queryString" scope="default" type="STRING"/>
+                            <property expression="json-eval($.designation)" name="designation" scope="default" type="STRING"/>
+                            <property expression="json-eval($.description)" name="description" scope="default" type="STRING"/>
+                        </propertyGroup>
+                        <call>
+                            <endpoint>
+                                <http method="get" uri-template="http://localhost:8091/products/{uri.var.queryString}/reviews/approved">
+                                    <suspendOnFailure>
+                                        <initialDuration>-1</initialDuration>
+                                        <progressionFactor>-1</progressionFactor>
+                                        <maximumDuration>0</maximumDuration>
+                                    </suspendOnFailure>
+                                    <markForSuspension>
+                                        <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                                    </markForSuspension>
+                                </http>
+                            </endpoint>
+                        </call>
+                        <iterate expression="json-eval($)">
+                            <target>
+                                <sequence>
+                                    <property expression="json-eval($.idReview)" name="uri.var.idReview" scope="default" type="STRING"/>
+                                    <log>
+                                        <property expression="$ctx:uri.var.idReview" name="idReview"/>
+                                    </log>
+                                    <call>
+                                        <endpoint>
+                                            <http method="get" uri-template="http://localhost:8636/api/Vote/GetVoteByReview/{uri.var.idReview}">
+                                                <suspendOnFailure>
+                                                    <initialDuration>-1</initialDuration>
+                                                    <progressionFactor>-1</progressionFactor>
+                                                    <maximumDuration>0</maximumDuration>
+                                                </suspendOnFailure>
+                                                <markForSuspension>
+                                                    <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                                                </markForSuspension>
+                                            </http>
+                                        </endpoint>
+                                    </call>
+                                </sequence>
+                            </target>
+                        </iterate>
+                        <aggregate>
+                            <completeCondition>
+                                <messageCount max="-1" min="-1"/>
+                            </completeCondition>
+                            <onComplete aggregateElementType="root" expression="json-eval($)">
+                                <log>
+                                    <property expression="json-eval($)" name="reviews"/>
+                                </log>
+                            </onComplete>
+                        </aggregate>
+                    </sequence>
+                </target>
+            </iterate>
+            <aggregate>
+                <completeCondition>
+                    <messageCount max="-1" min="-1"/>
+                </completeCondition>
+                <onComplete aggregateElementType="root" expression="json-eval($)">
+                    <respond/>
+                </onComplete>
+            </aggregate>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/VotesByUserId">
+        <inSequence>
+            <property expression="$url:userId" name="uri.var.userId" scope="default" type="STRING"/>
+            <call>
+                <endpoint key="GetProducts"/>
+            </call>
+            <iterate expression="//sku">
+                <target>
+                    <sequence>
+                        <property expression="json-eval($.sku)" name="uri.var.queryString" scope="default" type="STRING"/>
+                        <call>
+                            <endpoint>
+                                <http method="get" uri-template="http://localhost:8091/products/{uri.var.queryString}/reviews/approved">
+                                    <suspendOnFailure>
+                                        <initialDuration>-1</initialDuration>
+                                        <progressionFactor>-1</progressionFactor>
+                                        <maximumDuration>0</maximumDuration>
+                                    </suspendOnFailure>
+                                    <markForSuspension>
+                                        <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                                    </markForSuspension>
+                                </http>
+                            </endpoint>
+                        </call>
+                    </sequence>
+                </target>
+            </iterate>
+            <iterate expression="json-eval($)" id="getReview">
+                <target>
+                    <sequence>
+                        <log>
+                            <property expression="json-eval($)" name="json"/>
+                        </log>
+                        <propertyGroup>
+                            <property expression="json-eval($.idReview)" name="idReview" scope="default" type="STRING"/>
+                            <property expression="json-eval($.reviewText)" name="reviewText" scope="default" type="STRING"/>
+                            <property expression="json-eval($.publishingDate)" name="publishingDate" scope="default" type="STRING"/>
+                            <property expression="json-eval($.idReview)" name="uri.var.idReview" scope="default" type="STRING"/>
+                        </propertyGroup>
+                        <log>
+                            <property expression="$ctx:idReview" name="REVIEW ID"/>
+                        </log>
+                        <call>
+                            <endpoint>
+                                <http method="get" uri-template="http://localhost:8636/api/Vote/GetVoteByReview/{uri.var.idReview}">
+                                    <suspendOnFailure>
+                                        <initialDuration>-1</initialDuration>
+                                        <progressionFactor>-1</progressionFactor>
+                                        <maximumDuration>0</maximumDuration>
+                                    </suspendOnFailure>
+                                    <markForSuspension>
+                                        <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                                    </markForSuspension>
+                                </http>
+                            </endpoint>
+                        </call>
+                        <script language="js"><![CDATA[// Access the payload JSON data
+var payloadJson = mc.getPayloadJSON();
+
+// Get the userId to filter by
+var filterUserId = parseInt(mc.getProperty("uri.var.userId"));
+
+// Filter the votes based on the userId
+var filteredVotes = payloadJson.filter(function(vote) {
+    return vote.userId === filterUserId;
+});
+
+// Extract the required properties from the filtered votes
+var finalGroupedVotes = filteredVotes.map(function(vote) {
+    return {
+        userId: vote.userId,
+        reviewId: vote.reviewId,
+        vote: vote.vote
+    };
+});
+
+var finalJson = {
+    groupedVotes: finalGroupedVotes
+};
+
+// Update the payload with the modified JSON
+mc.setPayloadJSON(finalJson);]]></script>
+                    </sequence>
+                </target>
+            </iterate>
+            <aggregate>
+                <completeCondition>
+                    <messageCount max="-1" min="-1"/>
+                </completeCondition>
+                <onComplete aggregateElementType="root" expression="json-eval($)">
+                    <respond/>
+                </onComplete>
+            </aggregate>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/EvaluteQuantityUpDownVotes">
+        <inSequence>
+            <property expression="$url:userId" name="uri.var.userId" scope="default" type="STRING"/>
+            <call>
+                <endpoint>
+                    <http method="get" uri-template="http://localhost:8091/reviews/{uri.var.userId}">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>-1</progressionFactor>
+                            <maximumDuration>0</maximumDuration>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </http>
+                </endpoint>
+            </call>
+            <iterate expression="//idReview">
+                <target>
+                    <sequence>
+                        <property expression="json-eval($.idReview)" name="uri.var.idReview" scope="default" type="STRING"/>
+                        <call>
+                            <endpoint>
+                                <http method="get" uri-template="http://localhost:8636/api/Vote/GetVoteByReview/{uri.var.idReview}">
+                                    <suspendOnFailure>
+                                        <initialDuration>-1</initialDuration>
+                                        <progressionFactor>-1</progressionFactor>
+                                        <maximumDuration>0</maximumDuration>
+                                    </suspendOnFailure>
+                                    <markForSuspension>
+                                        <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                                    </markForSuspension>
+                                </http>
+                            </endpoint>
+                        </call>
+                    </sequence>
+                </target>
+            </iterate>
+            <aggregate>
+                <completeCondition>
+                    <messageCount max="-1" min="-1"/>
+                </completeCondition>
+                <onComplete aggregateElementType="root" expression="json-eval($)">
+                    <script language="js"><![CDATA[var payloadJson = mc.getPayloadJSON();
+
+// Initialize counters for upvotes and downvotes
+var upVotes = 0;
+var downVotes = 0;
+
+// Loop through each element in the JSON array
+for (var i = 0; i < payloadJson.length; i++) {
+    var reviewVotes = payloadJson[i];
+
+    for (var j = 0; j < reviewVotes.length; j++) {
+        var vote = reviewVotes[j].vote;
+
+        if (vote === "upVote") {
+            upVotes++;
+        } else if (vote === "downVote") {
+            downVotes++;
+        }
+    }
+}
+
+// Create the final JSON object
+var finalJson = {
+    upVotes: upVotes,
+    downVotes: downVotes
+};
+
+// Update the payload with the modified JSON
+mc.setPayloadJSON(finalJson);]]></script>
+                    <datamapper config="gov:datamapper/EvaluteQuantityUpDownVotesMapper.dmc" inputSchema="gov:datamapper/EvaluteQuantityUpDownVotesMapper_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/EvaluteQuantityUpDownVotesMapper_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/EvaluteQuantityUpDownVotesMapper_xsltStyleSheet.xml"/>
+                    <respond/>
+                </onComplete>
+            </aggregate>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+    <resource methods="GET" uri-template="/VotesByReviewId">
+        <inSequence>
+            <property expression="$url:userId" name="uri.var.userId" scope="default" type="STRING"/>
+            <call>
+                <endpoint>
+                    <http method="get" uri-template="http://localhost:8091/reviews/{uri.var.userId}">
+                        <suspendOnFailure>
+                            <initialDuration>-1</initialDuration>
+                            <progressionFactor>-1</progressionFactor>
+                            <maximumDuration>0</maximumDuration>
+                        </suspendOnFailure>
+                        <markForSuspension>
+                            <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                        </markForSuspension>
+                    </http>
+                </endpoint>
+            </call>
+            <iterate expression="//idReview">
+                <target>
+                    <sequence>
+                        <property expression="json-eval($.idReview)" name="uri.var.idReview" scope="default" type="STRING"/>
+                        <call>
+                            <endpoint>
+                                <http method="get" uri-template="http://localhost:8636/api/Vote/GetVoteByReview/{uri.var.idReview}">
+                                    <suspendOnFailure>
+                                        <initialDuration>-1</initialDuration>
+                                        <progressionFactor>-1</progressionFactor>
+                                        <maximumDuration>0</maximumDuration>
+                                    </suspendOnFailure>
+                                    <markForSuspension>
+                                        <retriesBeforeSuspension>0</retriesBeforeSuspension>
+                                    </markForSuspension>
+                                </http>
+                            </endpoint>
+                        </call>
+                    </sequence>
+                </target>
+            </iterate>
+            <aggregate>
+                <completeCondition>
+                    <messageCount max="-1" min="-1"/>
+                </completeCondition>
+                <onComplete aggregateElementType="root" expression="json-eval($)">
+                    <datamapper config="gov:datamapper/VotesByReviewIdMapper.dmc" inputSchema="gov:datamapper/VotesByReviewIdMapper_inputSchema.json" inputType="JSON" outputSchema="gov:datamapper/VotesByReviewIdMapper_outputSchema.json" outputType="JSON" xsltStyleSheet="gov:datamapper/VotesByReviewIdMapper_xsltStyleSheet.xml"/>
+                    <respond/>
+                </onComplete>
+            </aggregate>
+        </inSequence>
+        <outSequence/>
+        <faultSequence/>
+    </resource>
+</api>

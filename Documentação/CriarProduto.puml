@@ -1,0 +1,32 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor Anonymous_RegisteredUser as USER
+box "ProductsPost"
+participant "ProductController" as CTRL
+participant "ProductService" as SERV
+participant "ProductRepo" as REPO
+database "ProductsPost" as DB
+participant "MessageBroker" as MSG
+
+USER -> CTRL : POST /products
+activate CTRL
+    CTRL-> SERV : create(sku,designation, description)
+    activate SERV
+        SERV -> SERV : product = new Product(sku,designation, description)
+        SERV -> REPO: product= save(product)
+                activate REPO
+                    REPO -> DB : save(product)
+                    activate DB
+                    deactivate DB
+                deactivate REPO
+
+    deactivate SERV
+                CTRL -> CTRL : new event(update,product)
+                CTRL -> MSG : sendMessage(event)
+                    activate MSG
+                    deactivate MSG
+CTRL --> USER : Retorna o novo produto
+deactivate CTRL
+@enduml

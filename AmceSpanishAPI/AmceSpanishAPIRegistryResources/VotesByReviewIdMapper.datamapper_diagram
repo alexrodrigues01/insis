@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<notation:Diagram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:datamapper="http:///org/wso2/developerstudio/eclipse/gmf/datamapper" xmlns:notation="http://www.eclipse.org/gmf/runtime/1.0.3/notation" xmi:id="_C9ploArYEe6a0-MXQujhcg" type="DataMapper" name="VotesByReviewIdMapper.datamapper_diagram" measurementUnit="Pixel">
+  <children xmi:type="notation:Shape" xmi:id="_DEQj8ArYEe6a0-MXQujhcg" type="2002" fontName="Segoe UI">
+    <children xmi:type="notation:Shape" xmi:id="_EY_iQArYEe6a0-MXQujhcg" type="3002" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_EY_iQgrYEe6a0-MXQujhcg" type="5002"/>
+      <children xmi:type="notation:Shape" xmi:id="_EZB-gArYEe6a0-MXQujhcg" type="3020" fontName="Segoe UI">
+        <element xmi:type="datamapper:InNode" href="VotesByReviewIdMapper.datamapper#//@input/@treeNode.0/@inNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EZB-gQrYEe6a0-MXQujhcg" x="-1" y="1"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_EZB-ggrYEe6a0-MXQujhcg" type="3019" fontName="Segoe UI">
+        <element xmi:type="datamapper:OutNode" href="VotesByReviewIdMapper.datamapper#//@input/@treeNode.0/@outNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EZB-gwrYEe6a0-MXQujhcg"/>
+      </children>
+      <element xmi:type="datamapper:TreeNode" href="VotesByReviewIdMapper.datamapper#//@input/@treeNode.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_EY_iQQrYEe6a0-MXQujhcg"/>
+    </children>
+    <element xmi:type="datamapper:Input" href="VotesByReviewIdMapper.datamapper#//@input"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DEQj8QrYEe6a0-MXQujhcg" width="250" height="160"/>
+  </children>
+  <children xmi:type="notation:Shape" xmi:id="_DERLAArYEe6a0-MXQujhcg" type="2003" fontName="Segoe UI">
+    <children xmi:type="notation:Shape" xmi:id="_HCmBwArYEe6a0-MXQujhcg" type="3011" fontName="Segoe UI">
+      <children xmi:type="notation:DecorationNode" xmi:id="_HCmo0ArYEe6a0-MXQujhcg" type="5003"/>
+      <children xmi:type="notation:Shape" xmi:id="_HCpFEArYEe6a0-MXQujhcg" type="3020" fontName="Segoe UI">
+        <element xmi:type="datamapper:InNode" href="VotesByReviewIdMapper.datamapper#//@output/@treeNode.0/@inNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HCpFEQrYEe6a0-MXQujhcg" x="-10" y="4"/>
+      </children>
+      <children xmi:type="notation:Shape" xmi:id="_HCpsIArYEe6a0-MXQujhcg" type="3019" fontName="Segoe UI">
+        <element xmi:type="datamapper:OutNode" href="VotesByReviewIdMapper.datamapper#//@output/@treeNode.0/@outNode"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HCpsIQrYEe6a0-MXQujhcg"/>
+      </children>
+      <element xmi:type="datamapper:TreeNode" href="VotesByReviewIdMapper.datamapper#//@output/@treeNode.0"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_HCmBwQrYEe6a0-MXQujhcg"/>
+    </children>
+    <element xmi:type="datamapper:Output" href="VotesByReviewIdMapper.datamapper#//@output"/>
+    <layoutConstraint xmi:type="notation:Bounds" xmi:id="_DERLAQrYEe6a0-MXQujhcg" x="310" width="250" height="160"/>
+  </children>
+  <styles xmi:type="notation:DiagramStyle" xmi:id="_C9ploQrYEe6a0-MXQujhcg"/>
+  <element xmi:type="datamapper:DataMapperRoot" href="VotesByReviewIdMapper.datamapper#/"/>
+  <edges xmi:type="notation:Connector" xmi:id="_Hh2woArYEe6a0-MXQujhcg" type="4001" source="_EZB-ggrYEe6a0-MXQujhcg" target="_HCpFEArYEe6a0-MXQujhcg">
+    <styles xmi:type="notation:FontStyle" xmi:id="_Hh2woQrYEe6a0-MXQujhcg" fontName="Segoe UI"/>
+    <element xmi:type="datamapper:DataMapperLink" href="VotesByReviewIdMapper.datamapper#//@input/@treeNode.0/@outNode/@outgoingLink.0"/>
+    <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_Hh2wogrYEe6a0-MXQujhcg" points="[-2, 0, -252, 0]$[248, 0, -2, 0]"/>
+    <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Hh5M4ArYEe6a0-MXQujhcg" id="CENTER"/>
+    <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Hh5M4QrYEe6a0-MXQujhcg" id="CENTER"/>
+  </edges>
+</notation:Diagram>

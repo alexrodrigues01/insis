@@ -1,0 +1,37 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor Registered as USER
+box "VotesGet"
+participant "VotesController" as CTRL
+participant "VotesService" as SERV
+participant "ReviewRepo" as REPO
+participant "VotesRepo" as REPO2
+database "VotesGet" as DB
+participant "MessageBroker" as MSG
+
+USER -> CTRL : GET /Votes/{reviewId}
+activate CTRL
+    CTRL-> SERV : votes = findVotesByReview(reviewId)
+    activate SERV
+        SERV -> REPO: r = findVotesByReview(reviewId)
+                activate REPO
+                    REPO -> DB : findVotesByReview(reviewId)
+                    activate DB
+                    deactivate DB
+                deactivate REPO
+        SERV -> "VoteMapper" : toDtoList(r)
+            activate "VoteMapper"
+            deactivate "VoteMapper"
+    deactivate SERV
+CTRL -> SERV : sendMessage(votes)
+                activate SERV
+                    SERV -> SERV: messageInfo = new MessageInformationDTO(GET,Vote,votes)
+                    SERV -> MSG : sendMessage(messageInfo)
+                        activate MSG
+                        deactivate MSG
+                deactivate SERV
+CTRL --> USER : Retorna os votos
+deactivate CTRL
+@enduml

@@ -1,0 +1,11 @@
+---
+key: "amceSpanish-1.0.0"
+name : "amceSpanish"
+displayName : "amceSpanish"
+description: "Sample API"
+version: "1.0.0"
+serviceUrl: "https://{MI_HOST}:{MI_PORT}/spanish"
+definitionType: "OAS3"
+securityType: "BASIC"
+mutualSSLEnabled: false
+apiId : "null"

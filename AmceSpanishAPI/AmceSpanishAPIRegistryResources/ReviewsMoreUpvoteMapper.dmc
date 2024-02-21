@@ -1,0 +1,24 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+var count_i_inputroot_0a3a7f31_7e0b_4086_a3db_d0a23664bbe6 = 0;
+outputroot =  [];
+
+for(i_inputroot_0a3a7f31_7e0b_4086_a3db_d0a23664bbe6 in inputroot){
+outputroot[count_i_inputroot_0a3a7f31_7e0b_4086_a3db_d0a23664bbe6] =  {};
+outputroot[count_i_inputroot_0a3a7f31_7e0b_4086_a3db_d0a23664bbe6].revisionId = inputroot[i_inputroot_0a3a7f31_7e0b_4086_a3db_d0a23664bbe6].idReview;
+outputroot[count_i_inputroot_0a3a7f31_7e0b_4086_a3db_d0a23664bbe6].revisionTexto = inputroot[i_inputroot_0a3a7f31_7e0b_4086_a3db_d0a23664bbe6].reviewText;
+outputroot[count_i_inputroot_0a3a7f31_7e0b_4086_a3db_d0a23664bbe6].fechaDePublicacion = inputroot[i_inputroot_0a3a7f31_7e0b_4086_a3db_d0a23664bbe6].publishingDate;
+outputroot[count_i_inputroot_0a3a7f31_7e0b_4086_a3db_d0a23664bbe6].gustos = inputroot[i_inputroot_0a3a7f31_7e0b_4086_a3db_d0a23664bbe6].upvote;
+outputroot[count_i_inputroot_0a3a7f31_7e0b_4086_a3db_d0a23664bbe6].disgustos = inputroot[i_inputroot_0a3a7f31_7e0b_4086_a3db_d0a23664bbe6].downvote;
+
+count_i_inputroot_0a3a7f31_7e0b_4086_a3db_d0a23664bbe6++;
+}
+return outputroot;
+};
+
+
+
+
+
+

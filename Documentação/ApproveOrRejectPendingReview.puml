@@ -1,0 +1,44 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor Registered as USER
+actor Registered as USER
+box "ReviewsPost"
+participant "ReviewController" as CTRL
+participant "ReviewService" as SERV
+participant "ReviewRepo" as REPO
+database "ReviewsPost" as DB
+participant "MessageBroker" as MSG
+USER -> CTRL : PUT /reviews/acceptreject/{reviewID}
+activate CTRL
+    CTRL-> SERV : putAcceptRejectReview(reviewID, approved)
+    activate SERV
+        SERV -> REPO: review= moderateReview(reviewID, approved)
+                activate REPO
+                    REPO -> DB : findById(reviewID)
+                                        activate DB
+                                        deactivate DB
+                deactivate REPO
+                        deactivate REPO
+        SERV -> "review:Review" : setApprovalStatus(approved)
+        activate "review:Review"
+        deactivate "review:Review"
+        SERV -> REPO: delete(review)
+                        activate REPO
+                            REPO -> DB : save(review)
+                                                activate DB
+                                                deactivate DB
+                        deactivate REPO
+                                deactivate REPO
+        SERV -> "ReviewMapper" : toDtoList(r)
+            activate "ReviewMapper"
+            deactivate "ReviewMapper"
+    deactivate SERV
+    CTRL -> CTRL : event = new event(update,review)
+    CTRL -> MSG : sendMessage(event)
+        activate MSG
+        deactivate MSG
+CTRL --> USER : Confirma a aprovação/rejeição
+deactivate CTRL
+@enduml

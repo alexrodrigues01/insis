@@ -1,0 +1,13 @@
+openapi: 3.0.1
+info:
+  title: AcmeApi
+  description: API Definition of AcmeApi
+  version: 1.0.0
+servers:
+- url: http://localhost:8290/acme
+paths:
+  /products:
+    get:
+      responses:
+        default:
+          description: Default response

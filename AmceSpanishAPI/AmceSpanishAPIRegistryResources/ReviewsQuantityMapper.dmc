@@ -1,0 +1,8 @@
+map_S_root_S_root = function(){ 
+var outputroot={};
+
+outputroot =  {};
+outputroot.numero_de_revisiones = inputroot.number_Of_Reviews;
+return outputroot;
+};
+

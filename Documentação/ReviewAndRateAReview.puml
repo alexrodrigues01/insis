@@ -1,0 +1,60 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor Registered as USER
+box "ReviewsPost"
+participant "ReviewController" as CTRL
+participant "ReviewService" as SERV
+participant "RatingService" as SERV2
+participant "ProductRepo" as REPO
+participant "ReviewRepo" as REPO2
+participant "RestService" as SERV3
+participant "LocalDate" as DATE
+participant "RatingRepository" as REPO3
+database "ReviewsPost" as DB
+participant "MessageBroker" as MSG
+
+
+USER -> CTRL : Post /sku
+activate CTRL
+    CTRL-> SERV : review = create(createReviewDTO, sku)
+    activate SERV
+        SERV -> REPO: product= findBySku(sku)
+                activate REPO
+                    REPO -> DB : findBySku(sku)
+                    activate DB
+                    deactivate DB
+                deactivate REPO
+        SERV -> SERV2: rating = findByRate(createReviewDTO.getRating())
+            activate SERV2
+                SERV2 -> REPO3: findByRate(rate)
+                activate REPO3
+                    REPO3 -> DB : findBySku(sku)
+                        activate DB
+                        deactivate DB
+                deactivate REPO3
+            deactivate SERV2
+        SERV -> DATE: date=now()
+            activate DATE
+            deactivate DATE
+        SERV -> SERV3: funfact = getFunFact(date)
+            activate SERV3
+            deactivate SERV3
+        SERV -> "Review" : review = create(createReviewDTO.getReviewText(), date, product, funfact, rating,  createReviewDTO.getUserID())
+            activate "Review"
+            deactivate "Review"
+        SERV -> REPO2 : save(review)
+            activate REPO2
+                REPO2 -> DB : save()
+                     activate DB
+                     deactivate DB
+            deactivate REPO2
+    deactivate SERV
+CTRL -> CTRL : event = new event(Post, review)
+CTRL -> MSG : sendMessage(event)
+    activate MSG
+    deactivate MSG
+CTRL --> USER : Retorna a review criada
+deactivate CTRL
+@enduml

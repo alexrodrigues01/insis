@@ -1,0 +1,39 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+autonumber
+actor Registered as USER
+actor Registered as USER
+box "ReviewsPost"
+participant "ReviewController" as CTRL
+participant "ReviewService" as SERV
+participant "ReviewRepo" as REPO
+database "ReviewsPost" as DB
+participant "MessageBroker" as MSG
+
+USER -> CTRL : DELETE /reviews/{reviewID}
+activate CTRL
+    CTRL-> SERV : deleteReview(reviewID)
+    activate SERV
+        SERV -> REPO: review= findById(reviewID)
+                activate REPO
+                    REPO -> DB : findById(reviewID)
+                                        activate DB
+                                        deactivate DB
+                deactivate REPO
+                        deactivate REPO
+        SERV -> REPO: delete(review)
+                        activate REPO
+                            REPO -> DB : delete(review)
+                                                activate DB
+                                                deactivate DB
+                        deactivate REPO
+                                deactivate REPO
+    deactivate SERV
+CTRL -> CTRL : event = new event(Post, review)
+CTRL -> MSG : sendMessage(event)
+    activate MSG
+    deactivate MSG
+CTRL --> USER : Confirma a deleção
+deactivate CTRL
+@enduml
